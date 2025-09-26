@@ -206,7 +206,9 @@ def main():
             rknn.config(
                 target_platform=target_platform,
                 quantized_dtype=quant_dtype,
-                optimization_level=2
+                optimization_level=2,
+                mean_values=[[0, 0, 0]],
+                std_values=[[255.0, 255.0, 255.0]]
             )
             # Config doesn't return a useful value to check
 
